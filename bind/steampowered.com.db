@@ -1,0 +1,25 @@
+;
+;# 208.64.200.189 gds1.steampowered.com
+;# 208.64.200.190 gds2.steampowered.com
+;# 208.64.200.191 gds3.steampowered.com
+;# 208.78.164.7 gds4.steampowered.com
+;# 208.64.202.69 store.steampowered.com
+;# 63.235.4.133 support.steampowered.com
+
+;# Use the IP of your nginx server in place of <YourIP>
+;# <YourIP> *.cs.steampowered.com
+;# <YourIP> *.steampowered.com
+
+; resolve all entries to 10.0.0.2
+; named.conf.local will forward some hosts to 8.8.8.8 for real resolution
+$TTL	604800
+@	IN	SOA	fakedns.steampowered.com. root.webberist.com. (
+			      3		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+*	IN	NS	fakedns.steampowered.com.
+*	IN	A	10.0.0.2	
+fakedns	IN	A	10.0.0.2

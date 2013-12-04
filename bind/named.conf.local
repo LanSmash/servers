@@ -5,3 +5,13 @@
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
 //include "/etc/bind/zones.rfc1918";
+
+zone "webberist.com" in{
+  type master;
+  file "/etc/bind/webberist.com.db";
+};
+
+zone "gw.webberist.com" IN {
+  type forward;
+  forwarders {8.8.8.8; };
+};

@@ -18,9 +18,16 @@ options {
 	// If BIND logs error messages about the root key being expired,
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
-	dnssec-validation auto;
+	//dnssec-validation auto;
 
-	auth-nxdomain no;    # conform to RFC1035
-	listen-on-v6 { any; };
+	//auth-nxdomain no;    # conform to RFC1035
+	//auth-nxdomain yes;
+	//listen-on-v6 { any; };
+
+	allow-transfer {"none";};
+	
+	// recursion range you allow
+	allow-recursion { localhost; 10.0.0.0/8; 192.168.0.0/16; };
+
 };
 
