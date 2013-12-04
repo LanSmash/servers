@@ -27,3 +27,13 @@ zone "gds4.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "store.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "support.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 
+
+zone "netflix.com" IN 
+{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "unblock-us.com" IN 
+{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "hulu.com" IN 
+{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "blinkbox.com" IN 
+{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+
