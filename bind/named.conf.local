@@ -24,7 +24,6 @@ zone "gds1.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "gds2.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "gds3.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "gds4.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-zone "gds*.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "store.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "support.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 
