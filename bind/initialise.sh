@@ -7,6 +7,7 @@ touch /etc/bind/named.conf.blocklist
 mkdir -p /tmp/blacklist
 cd /tmp/blacklist
 ~/servers/blacklist/blacklist.sh
+rm /etc/bind/named.conf.blocklist
 cp named.conf.blocklist /etc/bind
 
 echo reloading bind, this takes a few minutes
