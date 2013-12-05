@@ -6,22 +6,12 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-// either the blocklist can be used, or the VPN can be used, not both.
-// this is because there are duplicate definitions for netflix.
-include "/etc/bind/named.conf.blocklist";
+//include "/etc/bind/named.conf.blocklist";
 //include "/etc/bind/named.conf.vpn";
 
-// direct these hosts to the real DNS via the forwarder
-// # 208.64.200.189 gds1.steampowered.com
-// # 208.64.200.190 gds2.steampowered.com
-// # 208.64.200.191 gds3.steampowered.com
-// # 208.78.164.7 gds4.steampowered.com
-// # 208.64.202.69 store.steampowered.com
-// # 63.235.4.133 support.steampowered.com
-
-zone "steampowered.com" in{
-  type master;
-  file "/etc/bind/steampowered.com.db";
+zone "steampowered.com" IN { 
+	type master;
+	file "/etc/bind/steampowered.com.db";
 };
 
 zone "gds1.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };

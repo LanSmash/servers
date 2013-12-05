@@ -35,7 +35,7 @@ cat "./BL/music/domains" >> blocklist.txt
 #cat "./BL/news/domains" >> blocklist.txt
 cat "./BL/podcasts/domains" >> blocklist.txt
 #cat "./BL/politics/domains" >> blocklist.txt
-cat "./BL/porn/domains" >> blocklist.txt
+#cat "./BL/porn/domains" >> blocklist.txt
 cat "./BL/radiotv/domains" >> blocklist.txt
 cat "./BL/redirector/domains" >> blocklist.txt
 #cat "./BL/religion/domains" >> blocklist.txt

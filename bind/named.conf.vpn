@@ -1,27 +1,15 @@
 ; redirect these zones to unblock-us.com
-zone "netflix.com" IN 
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "unblock-us.com" IN 
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "hulu.com" IN 
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "vudu.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "blinkbox.com" IN 
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "crackle.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "cinemanow.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "blockbusternow.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "marvel.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "netflix.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "unblock-us.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "hulu.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "vudu.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "blinkbox.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "crackle.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "cinemanow.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "blockbusternow.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "marvel.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
 
-zone "southparkstudios.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "comedycentral.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "mtvnimages.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "southparkstudios.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "comedycentral.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
+zone "mtvnimages.com" IN { type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
 
