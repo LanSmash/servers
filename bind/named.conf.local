@@ -6,7 +6,7 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-//include "/etc/bind/named.conf.blocklist";
+include "/etc/bind/named.conf.blocklist";
 //include "/etc/bind/named.conf.vpn";
 
 zone "steampowered.com" IN { 

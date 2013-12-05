@@ -14,7 +14,7 @@ cat "./BL/anonvpn/domains" >> blocklist.txt
 #cat "./BL/chat/domains" >> blocklist.txt
 cat "./BL/costtraps/domains" >> blocklist.txt
 #cat "./BL/dating/domains" >> blocklist.txt
-cat "./BL/downloads/domains" >> blocklist.txt
+#cat "./BL/downloads/domains" >> blocklist.txt
 cat "./BL/drugs/domains" >> blocklist.txt
 #cat "./BL/dynamic/domains" >> blocklist.txt
 cat "./BL/fortunetelling/domains" >> blocklist.txt
@@ -24,7 +24,7 @@ cat "./BL/gamble/domains" >> blocklist.txt
 cat "./BL/hacking/domains" >> blocklist.txt
 #cat "./BL/homestyle/domains" >> blocklist.txt
 #cat "./BL/hospitals/domains" >> blocklist.txt
-cat "./BL/imagehosting/domains" >> blocklist.txt
+#cat "./BL/imagehosting/domains" >> blocklist.txt
 #cat "./BL/isp/domains" >> blocklist.txt
 #cat "./BL/jobsearch/domains" >> blocklist.txt
 #cat "./BL/library/domains" >> blocklist.txt
@@ -46,8 +46,8 @@ cat "./BL/redirector/domains" >> blocklist.txt
 #cat "./BL/socialnet/domains" >> blocklist.txt
 cat "./BL/spyware/domains" >> blocklist.txt
 cat "./BL/tracker/domains" >> blocklist.txt
-cat "./BL/updatesites/domains" >> blocklist.txt
-cat "./BL/urlshortener/domains" >> blocklist.txt
+#cat "./BL/updatesites/domains" >> blocklist.txt
+#cat "./BL/urlshortener/domains" >> blocklist.txt
 #cat "./BL/violence/domains" >> blocklist.txt
 cat "./BL/warez/domains" >> blocklist.txt
 #cat "./BL/weapons/domains" >> blocklist.txt
