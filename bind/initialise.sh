@@ -9,5 +9,5 @@ cd /tmp/blacklist
 ~/servers/blacklist/blacklist.sh
 cp named.conf.blocklist /etc/bind
 
-#reloading bind, this takes a few minutes
-time rndc reload
+echo reloading bind, this takes a few minutes
+rndc reload

@@ -6,7 +6,10 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+// either the blocklist can be used, or the VPN can be used, not both.
+// this is because there are duplicate definitions for netflix.
 include "/etc/bind/named.conf.blocklist";
+//include "/etc/bind/named.conf.vpn";
 
 // direct these hosts to the real DNS via the forwarder
 // # 208.64.200.189 gds1.steampowered.com
@@ -27,31 +30,4 @@ zone "gds3.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "gds4.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "store.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 zone "support.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-
-
-zone "netflix.com" IN 
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "unblock-us.com" IN 
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "hulu.com" IN 
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "vudu.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "blinkbox.com" IN 
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "crackle.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "cinemanow.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "blockbusternow.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "marvel.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-
-zone "southparkstudios.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "comedycentral.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
-zone "mtvnimages.com" IN
-{ type forward; forwarders {208.122.23.22; 208.122.23.23; }; };
 
