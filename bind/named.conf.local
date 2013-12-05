@@ -6,6 +6,7 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+include "/etc/bind/named.conf.blocklist";
 
 // direct these hosts to the real DNS via the forwarder
 // # 208.64.200.189 gds1.steampowered.com
