@@ -1,0 +1,13 @@
+$TTL	604800
+@	IN	SOA	ls. root.ls. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@		IN	NS	localhost.
+*		IN	A	10.0.0.2	
+block		IN	A	10.0.0.2
+dc		IN	A	10.0.0.48
+steamcache	IN	A	10.0.0.3

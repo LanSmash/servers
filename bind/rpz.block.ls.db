@@ -1,0 +1,18 @@
+;RPZ
+; resolve all entries to 10.0.0.2 except hosts that must be real
+;
+$TTL 10
+@       IN SOA rpz.block.ls. rpz.ls. (
+       201312231;
+       3600;
+       300;
+       86400;
+       60 )
+       IN      NS      localhost.
+
+google.com 		IN CNAME google.com.
+;steampowered.com 	IN CNAME steampowered.com.
+
+;*.com			IN CNAME block.ls.
+youtube.com             IN CNAME block.ls.
+*.youtube.com		IN CNAME block.ls.

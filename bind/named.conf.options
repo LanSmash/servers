@@ -15,8 +15,8 @@ options {
 	// };
 
 	# Forward all DNS queries to the Google Public DNS. 
-	forwarders { 8.8.8.8; 8.8.4.4; }; 
-	forward only; 
+	#forwarders { 8.8.8.8; 8.8.4.4; }; 
+	#forward only; 
 
 	//========================================================================
 	// If BIND logs error messages about the root key being expired,
@@ -34,6 +34,10 @@ options {
 	
 	// block list
 	// http://dns.blog4ever.com/rpz-et-dns-exemple-de-configuration
-	response-policy { zone "rpz.ls";};
+	response-policy { 
+		zone "rpz.whitelist.ls";
+		zone "rpz.steam.ls";
+		zone "rpz.block.ls";
+	};
 };
 

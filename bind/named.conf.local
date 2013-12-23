@@ -11,22 +11,42 @@
 //include "/etc/bind/named.conf.blocklist";
 //include "/etc/bind/named.conf.vpn";
 
-zone "rpz.ls" {
+zone "rpz.whitelist.ls" {
        type master;
-       file "/etc/bind/rpz.ls.db";
-       allow-query {any;};
+       file "/etc/bind/rpz.whitelist.ls.db";
+       allow-query {localhost;};
        allow-update {none;};
 };
 
-zone "steampowered.com" IN { 
-	type master;
-	file "/etc/bind/steampowered.com.db";
+zone "rpz.steam.ls" {
+       type master;
+       file "/etc/bind/rpz.steam.ls.db";
+       allow-query {localhost;};
+       allow-update {none;};
 };
 
-zone "gds1.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-zone "gds2.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-zone "gds3.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-zone "gds4.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-zone "store.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-zone "support.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
+zone "rpz.block.ls" {
+       type master;
+       file "/etc/bind/rpz.block.ls.db";
+       allow-query {localhost;};
+       allow-update {none;};
+};
+
+zone "ls" IN {
+      type master;
+      file "/etc/bind/ls.db";
+};
+
+
+//zone "steampowered.com" IN { 
+//	type master;
+//	file "/etc/bind/steampowered.com.db";
+//};
+
+//zone "gds1.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
+//zone "gds2.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
+//zone "gds3.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
+//zone "gds4.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
+//zone "store.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
+//zone "support.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 
