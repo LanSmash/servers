@@ -1,4 +1,12 @@
 #!/bin/bash
+
+#find directory this script is in
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# put temporary files in /tmp/blacklist
+mkdir -p /tmp/blacklist
+cd /tmp/blacklist
+
 # download latest list if it is newer
 wget http://www.shallalist.de/Downloads/shallalist.tar.gz -N
 
@@ -35,7 +43,7 @@ cat "./BL/music/domains" >> blocklist.txt
 #cat "./BL/news/domains" >> blocklist.txt
 cat "./BL/podcasts/domains" >> blocklist.txt
 #cat "./BL/politics/domains" >> blocklist.txt
-#cat "./BL/porn/domains" >> blocklist.txt
+cat "./BL/porn/domains" >> blocklist.txt
 cat "./BL/radiotv/domains" >> blocklist.txt
 cat "./BL/redirector/domains" >> blocklist.txt
 #cat "./BL/religion/domains" >> blocklist.txt
@@ -56,10 +64,19 @@ cat "./BL/warez/domains" >> blocklist.txt
 cat "./BL/webradio/domains" >> blocklist.txt
 cat "./BL/webtv/domains" >> blocklist.txt
 
-#find directory this script is in
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 #convert the raw blocklist.txt list of domains to a zone format
-$DIR/convert2bind.pl blocklist.txt > named.conf.blocklist
+#$DIR/convert2bind.pl blocklist.txt > named.conf.blocklist
 
-echo "named.conf.blocklist created in current directory"
+#convert the raw blocklist.txt list of domains to a rpz format
+$DIR/convert2bindrpz.pl blocklist.txt > rpz.block.ls.db
+
+echo rpz.block.ls.db created in /tmp/blocklist.
+echo updating /etc/bind
+
+sudo cp rpz.block.ls.db /etc/bind
+
+echo "rpz.block.ls.db updated in /etc/bind"
+
+echo reloading bind, this takes a few minutes
+sudo rndc reload
+
