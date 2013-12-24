@@ -37,7 +37,7 @@ options {
 	response-policy { 
 		zone "rpz.whitelist.ls";
 		zone "rpz.steam.ls";
-		zone "rpz.block.ls";
+		zone "rpz.block.ls" policy CNAME block.ls;
 	};
 };
 
