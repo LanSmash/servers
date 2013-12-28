@@ -19,4 +19,7 @@ git clone git@github.com:webberist/servers.git ~/servers
 #use github with https
 #git clone https://github.com/webberist/servers.git servers
 
-
+echo "###################"
+echo "Reboot is recommended to ensure apparmor is unloaded"
+echo "If bind named cannot start it is due to apparmor and the config paths"
+echo "###################"
