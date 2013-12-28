@@ -2,7 +2,7 @@ servers
 =======
 ```
 sudo apt-get update && sudo apt-get install vim open-vm-tools openssh-server
-wget https://raw.github.com/webberist/servers/master/initialise.sh && sh ./initalise.sh
+wget https://raw.github.com/webberist/servers/master/initialise.sh && sh ./initialise.sh
 ```
 usage
 =====
