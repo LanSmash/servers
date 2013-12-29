@@ -15,7 +15,8 @@ youtube.com	 	IN CNAME youtube.com.
 ;*.youtube.com		IN CNAME *. ; cannot whitelist an entire subdomain because of the *
 
 ;blocks
-*.speedtest.*		IN CNAME *.;
+speedtest.net		IN CNAME *.;
+*.speedtest.net		IN CNAME *.;
 pingtest.net		IN CNAME *.;
 *.pingtest.net		IN CNAME *.;
 ookla.com		IN CNAME *.;
@@ -24,9 +25,11 @@ netindex.com		IN CNAME *.;
 *.netindex.com		IN CNAME *.;
 netindex.co		IN CNAME *.;
 *.netindex.co		IN CNAME *.;
-
+utorrent.com		IN CNAME *.;
+*.utorrent.com		IN CNAME *.;
 
 ; updates
-get.adobe.com		IN CNAME *.;
-
+get.adobe.com			IN CNAME *.;
+updates.installshield.com	IN CNAME *.;
+	
 

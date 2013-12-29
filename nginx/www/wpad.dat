@@ -1,0 +1,11 @@
+function FindProxyForURL(url, host)
+{
+  if (isPlainHostName(host) ||
+    isInNet(host, "10.0.0.0", "255.0.0.0") ||
+    isInNet(host, "172.16.0.0", "255.255.224.0") ||
+    isInNet(host, "192.168.0.0", "255.255.0.0") ||
+    isInNet(host, "127.0.0.0", "255.0.0.0"))
+    return "DIRECT";
+  else
+    return "PROXY proxy.ls:8080"; DIRECT 
+};

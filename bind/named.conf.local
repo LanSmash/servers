@@ -37,24 +37,7 @@ zone "ls" IN {
       file "/etc/bind/ls.db";
 };
 
-
-//zone "steampowered.com" IN { 
-//	type master;
-//	file "/etc/bind/steampowered.com.db";
-//};
-
-//zone "gds1.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-//zone "gds2.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-//zone "gds3.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-//zone "gds4.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-//zone "store.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-//zone "support.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
-
 logging {
-//	channel "queries" {
-//		file "/var/log/bind/query.log" versions 10 size 120m;
-//		print-time yes;
-//	};
 	channel default_syslog {
 		syslog local4;
 		severity debug;
@@ -64,11 +47,11 @@ logging {
                 print-time yes;
         };
 	category lame-servers { null; };
-      category default { "log"; };
-      category general { "log"; };
-      category security { "log";};
-      category config { "log"; };
-      category queries { "log"; };
+	category default { "log"; };
+	category general { "log"; };
+	category security { "log";};
+	category config { "log"; };
+	category queries { "log"; };
 };
 
 //      category default { default_syslog; };

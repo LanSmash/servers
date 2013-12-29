@@ -7,7 +7,17 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @		IN	NS	localhost.
-*		IN	A	10.0.0.2	
-block		IN	A	10.0.0.2
-dc		IN	A	10.0.0.48
-steamcache	IN	A	10.0.0.3
+;*		IN	A	10.0.0.2	
+proxy		IN	A	10.0.0.2
+block		IN	CNAME	proxy
+
+; proxy wpad info
+wpad            IN      CNAME   proxy
+@		IN	TXT	"service: wpad:http://wpad.ls:80/wpad.dat"
+wpad.tcp	IN	SRV	0 0 80 wpad.ls
+
+steamcache	IN	CNAME	cache
+
+;servers 
+dc              IN      A       10.0.0.48
+
