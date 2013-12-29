@@ -35,9 +35,10 @@ options {
 	// block list
 	// http://dns.blog4ever.com/rpz-et-dns-exemple-de-configuration
 	response-policy { 
-		zone "rpz.whitelist.ls";
+		zone "rpz.custom.ls" policy CNAME block.ls;
 		zone "rpz.steam.ls";
 		zone "rpz.block.ls" policy CNAME block.ls;
 	};
+
 };
 

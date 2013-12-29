@@ -1,0 +1,32 @@
+;RPZ
+; a whitelist/blacklist of hosts to override
+;
+$TTL 10
+@       IN SOA rpz.custom.ls. rpz.custom.ls. (
+       201312231;
+       3600;
+       300;
+       86400;
+       60 )
+       IN      NS      localhost.
+
+; hosts that resolve normally
+youtube.com	 	IN CNAME youtube.com.
+;*.youtube.com		IN CNAME *. ; cannot whitelist an entire subdomain because of the *
+
+;blocks
+*.speedtest.*		IN CNAME *.;
+pingtest.net		IN CNAME *.;
+*.pingtest.net		IN CNAME *.;
+ookla.com		IN CNAME *.;
+*.ookla.com		IN CNAME *.;
+netindex.com		IN CNAME *.;
+*.netindex.com		IN CNAME *.;
+netindex.co		IN CNAME *.;
+*.netindex.co		IN CNAME *.;
+
+
+; updates
+get.adobe.com		IN CNAME *.;
+
+
