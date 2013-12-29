@@ -11,9 +11,9 @@
 //include "/etc/bind/named.conf.blocklist";
 //include "/etc/bind/named.conf.vpn";
 
-zone "rpz.whitelist.ls" {
+zone "rpz.custom.ls" {
        type master;
-       file "/etc/bind/rpz.whitelist.ls.db";
+       file "/etc/bind/rpz.custom.ls.db";
        allow-query {localhost;};
        allow-update {none;};
 };
@@ -49,4 +49,31 @@ zone "ls" IN {
 //zone "gds4.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 //zone "store.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
 //zone "support.steampowered.com" IN { type forward; forwarders {8.8.8.8; }; };
+
+logging {
+//	channel "queries" {
+//		file "/var/log/bind/query.log" versions 10 size 120m;
+//		print-time yes;
+//	};
+	channel default_syslog {
+		syslog local4;
+		severity debug;
+	};
+        channel "log" {
+                file "/var/log/bind.log" versions 10 size 120m;
+                print-time yes;
+        };
+	category lame-servers { null; };
+      category default { "log"; };
+      category general { "log"; };
+      category security { "log";};
+      category config { "log"; };
+      category queries { "log"; };
+};
+
+//      category default { default_syslog; };
+//      category general { default_syslog; };
+//      category security { default_syslog; };
+//      category config { default_syslog; };
+//      category queries { "queries"; };
 
