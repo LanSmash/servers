@@ -10,9 +10,11 @@ $TTL	604800
 block		IN	CNAME	proxy
 
 ; proxy wpad info
-wpad            IN      CNAME   proxy
-@		IN	TXT	"service: wpad:http://wpad.ls:80/wpad.dat"
-wpad.tcp	IN	SRV	0 0 80 wpad.ls
+; wpad disabled, it only appears to work on ip addresses, not hosts resolving to local ip addresses.
+; ie, all rpz cache redirects are for original domain with 10.0.0.2 resolving but ignore 10.0.0.2 wpad ip entry
+;wpad            IN      CNAME   proxy
+;@		IN	TXT	"service: wpad:http://wpad.ls:80/wpad.dat"
+;wpad.tcp	IN	SRV	0 0 80 wpad.ls
 
 steamcache	IN	CNAME	proxy
 cache		IN	CNAME	proxy
