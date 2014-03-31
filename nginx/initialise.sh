@@ -3,6 +3,7 @@ ln -s -f /home/weby/servers/nginx/nginx.conf /etc/nginx/nginx.conf
 mkdir -p /var/proxy/nginx/steampipe/depot
 mkdir -p /var/proxy/nginx/wargaming
 chown -R www-data /var/proxy/nginx
+mv /var/www /var/www-disabled
 ln -s -f /home/weby/servers/nginx/www /var/www
 
 echo generating SSL certificate

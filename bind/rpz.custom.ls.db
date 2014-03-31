@@ -15,6 +15,9 @@ youtube.com	 	IN CNAME youtube.com.
 ;*.youtube.com		IN CNAME *. ; cannot whitelist an entire subdomain because of the *
 
 ;blocks
+;pandonetworks.com is the p2p network for league of legends downloader
+pandonetworks.com	IN CNAME *.;
+*.pandonetworks.com	IN CNAME *.;
 speedtest.net		IN CNAME *.;
 *.speedtest.net		IN CNAME *.;
 pingtest.net		IN CNAME *.;
