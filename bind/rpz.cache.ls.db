@@ -30,5 +30,6 @@ support.steampowered.com IN CNAME support.steampowered.com.
 steampowered.com        IN CNAME steamcache.ls.
 *.steampowered.com	IN CNAME steamcache.ls.
 *.store.steampowered.com IN CNAME steamcache.ls.
+cs.steampowered.com   	IN CNAME steamcache.ls.
 *.cs.steampowered.com   IN CNAME steamcache.ls.
 

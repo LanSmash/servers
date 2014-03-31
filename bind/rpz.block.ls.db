@@ -1,0 +1,14 @@
+;RPZ
+; an empty blacklist of hosts to override by default
+;
+$TTL 10
+@       IN SOA rpz.block.ls. rpz.block.ls. (
+       201312231;
+       3600;
+       300;
+       86400;
+       60 )
+       IN      NS      localhost.
+
+; hosts resolve normally, run blacklist script to overwrite this with a blocklist
+
