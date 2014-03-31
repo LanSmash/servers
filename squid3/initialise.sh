@@ -1,6 +1,6 @@
 ln -s -f /home/weby/servers/squid3/squid.conf /etc/squid3/squid.conf
-mkdir -p /var/proxy/squid
-chown -R proxy:proxy /var/proxy/squid
+mkdir -p /var/proxy
+chown -R proxy:proxy /var/proxy
 
 ## Use DNS for steamcache
 #add steamcache to point to localhost
