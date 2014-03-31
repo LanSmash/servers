@@ -1,15 +1,22 @@
 ;RPZ
-; resolve all entries to 10.0.0.2 except hosts that must be real
+; resolve all entries to cache.ls & steamcache.ls except hosts that must be real
 ;
 $TTL 10
 @       IN SOA rpz.steam.ls. rpz.steam.ls. (
-       201312231;
+       201403311;
        3600;
        300;
        86400;
        60 )
        IN      NS      localhost.
 
+; **L3CDN Riot Games**
+; all of domain is manipulated to go to our cache
+l3cdn.riotgames.com	IN CNAME cache.ls.
+*.l3cdn.riotgames.com	IN CNAME cache.ls.
+
+; **Steam Pipe**
+; hosts that resolve normally
 gds1.steampowered.com 	IN CNAME gds1.steampowered.com.
 gds2.steampowered.com 	IN CNAME gds2.steampowered.com.
 gds3.steampowered.com 	IN CNAME gds3.steampowered.com.
@@ -19,5 +26,9 @@ gds6.steampowered.com 	IN CNAME gds6.steampowered.com.
 store.steampowered.com 	IN CNAME store.steampowered.com.
 support.steampowered.com IN CNAME support.steampowered.com.
 
+; remainder of domain is manipulated to go to our cache
 steampowered.com        IN CNAME steamcache.ls.
 *.steampowered.com	IN CNAME steamcache.ls.
+*.store.steampowered.com IN CNAME steamcache.ls.
+*.cs.steampowered.com   IN CNAME steamcache.ls.
+

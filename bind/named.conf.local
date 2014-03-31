@@ -18,9 +18,9 @@ zone "rpz.custom.ls" {
        allow-update {none;};
 };
 
-zone "rpz.steam.ls" {
+zone "rpz.cache.ls" {
        type master;
-       file "/etc/bind/rpz.steam.ls.db";
+       file "/etc/bind/rpz.cache.ls.db";
        allow-query {localhost;};
        allow-update {none;};
 };
