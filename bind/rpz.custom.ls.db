@@ -3,7 +3,7 @@
 ;
 $TTL 10
 @       IN SOA rpz.custom.ls. rpz.custom.ls. (
-       201404041;
+       201404043;
        3600;
        300;
        86400;
@@ -17,8 +17,8 @@ youtube.com	 	IN CNAME youtube.com.
 ;blocks
 ;pandonetworks.com is the p2p network for league of legends downloader
 ;blocking pandonetworks seams to cause LOL downloader to timeout
-;pandonetworks.com	IN CNAME *.;
-;*.pandonetworks.com	IN CNAME *.;
+pandonetworks.com	IN CNAME *.;
+*.pandonetworks.com	IN CNAME *.;
 speedtest.net		IN CNAME *.;
 *.speedtest.net		IN CNAME *.;
 pingtest.net		IN CNAME *.;
@@ -31,9 +31,15 @@ netindex.co		IN CNAME *.;
 *.netindex.co		IN CNAME *.;
 ;utorrent.com		IN CNAME *.;
 ;*.utorrent.com		IN CNAME *.;
+tracker.freshon.tv	IN CNAME *.;
+
 
 ; updates
-#get.adobe.com			IN CNAME *.;
-#updates.installshield.com	IN CNAME *.;
+get.adobe.com			IN CNAME *.;
+updates.installshield.com	IN CNAME *.;
+;windows updates are needed for .net install of games
+;windowsupdate.com		IN CNAME *.;
+;*.windowsupdate.com             IN CNAME *.;
+;*.download.windowsupdate.com    IN CNAME *.;
 	
 
