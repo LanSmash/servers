@@ -37,9 +37,9 @@ tracker.freshon.tv	IN CNAME *.;
 ; updates
 get.adobe.com			IN CNAME *.;
 updates.installshield.com	IN CNAME *.;
-;windows updates are needed for .net install of games
+;windows updates are needed for .net install of games (maybe we don't know)
 ;windowsupdate.com		IN CNAME *.;
 ;*.windowsupdate.com             IN CNAME *.;
-;*.download.windowsupdate.com    IN CNAME *.;
+*.download.windowsupdate.com    IN CNAME *.;
 	
 

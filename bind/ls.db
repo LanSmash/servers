@@ -1,6 +1,6 @@
 $TTL	604800
 @	IN	SOA	ls. root.ls. (
-			      3		; Serial
+			      5		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -20,5 +20,5 @@ steamcache	IN	CNAME	cache
 ;servers 
 proxy           IN      A       10.0.0.2
 cache		IN	A	10.0.0.3
-dc              IN      A       10.0.1.173
-
+dc              IN      A       10.0.1.99
+mumble		IN	A	10.0.0.53
