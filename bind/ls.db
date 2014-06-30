@@ -1,6 +1,6 @@
 $TTL	604800
 @	IN	SOA	ls. root.ls. (
-			      5		; Serial
+			      6		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -16,9 +16,26 @@ block		IN	CNAME	proxy
 ;wpad.tcp	IN	SRV	0 0 80 wpad.ls 
 steamcache	IN	CNAME	cache
 ;cache		IN	CNAME	proxy
+web		IN	CNAME	ggf
+intranet	IN	CNAME	ggf
+
 
 ;servers 
 proxy           IN      A       10.0.0.2
 cache		IN	A	10.0.0.3
 dc              IN      A       10.0.1.99
-mumble		IN	A	10.0.0.53
+mumble1		IN	A	10.0.0.51
+mumble2		IN	A	10.0.0.52
+nas		IN	A	10.0.0.17
+netboot		IN	A	10.0.0.15
+netmon		IN	A	10.0.0.33
+ggf		IN	A	10.0.0.60
+
+
+lancache-steam		IN	A	10.0.0.53
+lancache-riot	        IN      A       10.0.0.54
+lancache-blizzard       IN      A       10.0.0.55
+lancache-hirez	        IN      A       10.0.0.56
+lancache-origin	        IN      A       10.0.0.57
+lancache-sony	        IN      A       10.0.0.58
+

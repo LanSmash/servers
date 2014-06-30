@@ -12,6 +12,7 @@ $TTL 10
 
 ; hosts that resolve normally
 youtube.com	 	IN CNAME youtube.com.
+accounts.youtube.com	IN CNAME accounts.youtube.com.
 ;*.youtube.com		IN CNAME *. ; cannot whitelist an entire subdomain because of the *
 
 ;blocks
@@ -19,20 +20,21 @@ youtube.com	 	IN CNAME youtube.com.
 ;blocking pandonetworks seams to cause LOL downloader to timeout
 pandonetworks.com	IN CNAME *.;
 *.pandonetworks.com	IN CNAME *.;
-speedtest.net		IN CNAME *.;
-*.speedtest.net		IN CNAME *.;
-pingtest.net		IN CNAME *.;
-*.pingtest.net		IN CNAME *.;
-ookla.com		IN CNAME *.;
-*.ookla.com		IN CNAME *.;
-netindex.com		IN CNAME *.;
-*.netindex.com		IN CNAME *.;
-netindex.co		IN CNAME *.;
-*.netindex.co		IN CNAME *.;
+;speedtest.net		IN CNAME *.;
+;*.speedtest.net		IN CNAME *.;
+;pingtest.net		IN CNAME *.;
+;*.pingtest.net		IN CNAME *.;
+;ookla.com		IN CNAME *.;
+;*.ookla.com		IN CNAME *.;
+;netindex.com		IN CNAME *.;
+;*.netindex.com		IN CNAME *.;
+;netindex.co		IN CNAME *.;
+;*.netindex.co		IN CNAME *.;
+
 ;utorrent.com		IN CNAME *.;
 ;*.utorrent.com		IN CNAME *.;
 tracker.freshon.tv	IN CNAME *.;
-
+;utorrent above is used for btsync i think
 
 ; updates
 get.adobe.com			IN CNAME *.;
