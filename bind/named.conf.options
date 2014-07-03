@@ -40,11 +40,11 @@ options {
 	
 	// block list
 	// http://dns.blog4ever.com/rpz-et-dns-exemple-de-configuration
-	response-policy { 
-		zone "rpz.custom.ls" policy CNAME block.ls;
-		zone "rpz.cache.ls";
-		zone "rpz.block.ls" policy CNAME block.ls;
-	};
+	//response-policy { 
+	//	zone "rpz.custom.ls" policy CNAME block.ls;
+	//	zone "rpz.cache.ls";
+	//	zone "rpz.block.ls" policy CNAME block.ls;
+	//};
 
 };
 

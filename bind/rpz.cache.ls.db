@@ -2,7 +2,7 @@
 ; resolve all entries to cache.ls & steamcache.ls except hosts that must be real
 ;
 $TTL 10
-@       IN SOA rpz.steam.ls. rpz.steam.ls. (
+@       IN SOA rpz.cache.ls. rpz.cache.ls. (
        201403311;
        3600;
        300;

@@ -3,7 +3,7 @@
 ;
 $TTL 10
 @       IN SOA rpz.custom.ls. rpz.custom.ls. (
-       201404043;
+       201404044;
        3600;
        300;
        86400;
@@ -13,7 +13,7 @@ $TTL 10
 ; hosts that resolve normally
 youtube.com	 	IN CNAME youtube.com.
 accounts.youtube.com	IN CNAME accounts.youtube.com.
-;*.youtube.com		IN CNAME *. ; cannot whitelist an entire subdomain because of the *
+*.youtube.com		IN CNAME *. ; cannot whitelist an entire subdomain because of the *
 
 ;blocks
 ;pandonetworks.com is the p2p network for league of legends downloader
