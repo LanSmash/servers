@@ -36,7 +36,7 @@ options {
 	allow-transfer {"none";};
 	
 	// recursion range you allow
-	allow-recursion { localhost; 10.0.0.0/8; 192.168.0.0/16; };
+	allow-recursion { localhost; 10.0.0.0/8; 192.168.0.0/16; 172.16.0.0/16; };
 	
 	// block list
 	// http://dns.blog4ever.com/rpz-et-dns-exemple-de-configuration
