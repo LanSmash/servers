@@ -27,8 +27,8 @@ options {
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
 	// perth was failing dns authentication
-	//dnssec-validation auto;
-	dnssec-enable no; dnssec-validation no;
+	dnssec-validation auto;
+	//dnssec-enable no; dnssec-validation no;
 
 	auth-nxdomain no;    # conform to RFC1035
 	listen-on-v6 { any; };

@@ -43,7 +43,7 @@ logging {
 		severity debug;
 	};
         channel "log" {
-                file "/var/log/bind.log" versions 10 size 120m;
+                file "/var/log/bind.log" versions 2 size 12m;
                 print-time yes;
         };
 	category lame-servers { null; };
