@@ -1,7 +1,12 @@
-apt-get install nginx
-ln -s -f /home/weby/servers/nginx/nginx.conf /etc/nginx/nginx.conf
-chown -R www-data /var/proxy
-
-
-/etc/init.d/nginx restart
+mkdir -p /data/www/logs
+chown -R nginx:nginx /data/www
+echo 10.0.0.53	lancache-steam >> /etc/hosts
+echo 10.0.0.54  lancache-riot >> /etc/hosts
+echo 10.0.0.55  lancache-blizzard >> /etc/hosts
+echo 10.0.0.56  lancache-hirez >> /etc/hosts
+echo 10.0.0.57  lancache-origin >> /etc/hosts
+echo 10.0.0.58  lancache-sony >> /etc/hosts
+echo 10.0.0.59  lancache-origin >> /etc/hosts
+cd /etc/nginx
+ln -s -f /home/weby/servers/nginx/* .
 
