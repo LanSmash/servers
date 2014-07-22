@@ -14,6 +14,10 @@ options {
 	// 	0.0.0.0;
 	// };
 
+	// for perth convention center
+	//forwarders {203.161.127.1; 203.153.224.42;};
+	//forward only;
+
 	# Forward all DNS queries to the Google Public DNS. 
 	#forwarders { 8.8.8.8; 8.8.4.4; }; 
 	#forward only; 
@@ -22,7 +26,9 @@ options {
 	// If BIND logs error messages about the root key being expired,
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
+	// perth was failing dns authentication
 	dnssec-validation auto;
+	//dnssec-enable no; dnssec-validation no;
 
 	auth-nxdomain no;    # conform to RFC1035
 	listen-on-v6 { any; };
@@ -30,15 +36,15 @@ options {
 	allow-transfer {"none";};
 	
 	// recursion range you allow
-	allow-recursion { localhost; 10.0.0.0/8; 192.168.0.0/16; };
+	allow-recursion { localhost; 10.0.0.0/8; 192.168.0.0/16; 172.16.0.0/16; };
 	
 	// block list
 	// http://dns.blog4ever.com/rpz-et-dns-exemple-de-configuration
-	response-policy { 
-		zone "rpz.custom.ls" policy CNAME block.ls;
-		zone "rpz.cache.ls";
-		zone "rpz.block.ls" policy CNAME block.ls;
-	};
+	//response-policy { 
+	//	zone "rpz.custom.ls" policy CNAME block.ls;
+	//	zone "rpz.cache.ls";
+	//	zone "rpz.block.ls" policy CNAME block.ls;
+	//};
 
 };
 

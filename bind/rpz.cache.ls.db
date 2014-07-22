@@ -2,7 +2,7 @@
 ; resolve all entries to cache.ls & steamcache.ls except hosts that must be real
 ;
 $TTL 10
-@       IN SOA rpz.steam.ls. rpz.steam.ls. (
+@       IN SOA rpz.cache.ls. rpz.cache.ls. (
        201403311;
        3600;
        300;
@@ -12,8 +12,8 @@ $TTL 10
 
 ; **L3CDN Riot Games**
 ; all of domain is manipulated to go to our cache
-l3cdn.riotgames.com	IN CNAME cache.ls.
-*.l3cdn.riotgames.com	IN CNAME cache.ls.
+l3cdn.riotgames.com	IN CNAME lancache-riot.ls.
+*.l3cdn.riotgames.com	IN CNAME lancache-riot.ls.
 
 ; **Steam Pipe**
 ; hosts that resolve normally
@@ -27,9 +27,36 @@ store.steampowered.com 	IN CNAME store.steampowered.com.
 support.steampowered.com IN CNAME support.steampowered.com.
 
 ; remainder of domain is manipulated to go to our cache
-steampowered.com        IN CNAME steamcache.ls.
-*.steampowered.com	IN CNAME steamcache.ls.
-*.store.steampowered.com IN CNAME steamcache.ls.
-cs.steampowered.com   	IN CNAME steamcache.ls.
-*.cs.steampowered.com   IN CNAME steamcache.ls.
+steampowered.com        IN CNAME lancache-steam.ls.
+*.steampowered.com	IN CNAME lancache-steam.ls.
+*.store.steampowered.com IN CNAME lancache-steam.ls.
+cs.steampowered.com   	IN CNAME lancache-steam.ls.
+*.cs.steampowered.com   IN CNAME lancache-steam.ls.
 
+; from lancache config files
+cs.steampowered.com 		IN CNAME lancache-steam.ls.
+*.cs.steampowered.com 		IN CNAME lancache-steam.ls.
+content1.steampowered.com	IN CNAME lancache-steam.ls.
+content2.steampowered.com 	IN CNAME lancache-steam.ls.
+content3.steampowered.com 	IN CNAME lancache-steam.ls.
+content4.steampowered.com	IN CNAME lancache-steam.ls.	
+content5.steampowered.com 	IN CNAME lancache-steam.ls.
+content6.steampowered.com 	IN CNAME lancache-steam.ls.
+content7.steampowered.com	IN CNAME lancache-steam.ls.
+content8.steampowered.com 	IN CNAME lancache-steam.ls.
+*.hsar.steampowered.com.edgesuite.net	IN CNAME lancache-steam.ls.
+clientconfig.akamai.steamstatic.com	IN CNAME lancache-steam.ls.
+
+; blizzard
+dist.blizzard.com.edgesuite.net IN CNAME lancache-blizzard.ls.
+llnw.blizzard.com 		IN CNAME lancache-blizzard.ls.
+dist.blizzard.com		IN CNAME lancache-blizzard.ls.
+
+; hirez
+hirez.http.internapcdn.net	IN CNAME lancache-hirez.ls.
+
+;origin
+akamai.cdn.ea.com		IN CNAME lancache-origin.ls.
+
+; sony
+pls.patch.station.sony.com	IN CNAME lancache-sony.ls.
