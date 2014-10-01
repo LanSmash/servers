@@ -11,30 +11,75 @@
 //include "/etc/bind/named.conf.blocklist";
 //include "/etc/bind/named.conf.vpn";
 
-zone "rpz.custom.ls" {
+acl deathmatchcache {
+   10.0.99.197/32;
+};
+
+view "normal-view" {
+  match-clients { any; };
+  include "/etc/bind/named.conf.default-zones";
+  
+  response-policy {
+                zone "rpz.custom.ls" policy CNAME block.ls;
+                zone "rpz.deathmatch-cache.ls";
+		//zone "rpz.cache.ls";
+                zone "rpz.block.ls" policy CNAME block.ls;
+  };
+
+  zone "rpz.custom.ls" {
        type master;
        file "/etc/bind/rpz.custom.ls.db";
        allow-query {localhost;};
        allow-update {none;};
-};
+  };
 
-zone "rpz.cache.ls" {
+  zone "rpz.deathmatch-cache.ls" {
        type master;
-       file "/etc/bind/rpz.cache.ls.db";
+       file "/etc/bind/rpz.deathmatch-cache.ls.db";
        allow-query {localhost;};
        allow-update {none;};
-};
+  };
 
-zone "rpz.block.ls" {
+  zone "rpz.block.ls" {
        type master;
        file "/etc/bind/rpz.block.ls.db";
        allow-query {localhost;};
        allow-update {none;};
-};
+  };
 
-zone "ls" IN {
+  zone "ls" IN {
       type master;
       file "/etc/bind/ls.db";
+  };
+
+};
+
+
+//
+// normal zone for LanSmash
+//
+view "chache-chain-view" {
+  //match-clients { any; };
+  match-clients { deathmatchcache; };
+
+
+  include "/etc/bind/named.conf.default-zones";
+
+  response-policy {
+                zone "rpz.cache.ls";
+  };
+
+  zone "rpz.cache.ls" {
+       type master;
+       file "/etc/bind/rpz.cache.ls.db";
+       allow-query {localhost;};
+       allow-update {none;};
+  };
+
+  zone "ls" IN {
+      type master;
+      file "/etc/bind/ls.db";
+  };
 };
 
 logging {
@@ -43,7 +88,7 @@ logging {
 		severity debug;
 	};
         channel "log" {
-                file "/var/log/bind.log" versions 10 size 120m;
+                file "/var/log/bind.log" versions 2 size 12m;
                 print-time yes;
         };
 	category lame-servers { null; };
