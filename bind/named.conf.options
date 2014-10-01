@@ -15,8 +15,8 @@ options {
 	// };
 
 	# Forward all DNS queries to the Google Public DNS. 
-	#forwarders { 8.8.8.8; 8.8.4.4; }; 
-	#forward only; 
+	forwarders { 8.8.8.8; 8.8.4.4; }; 
+	forward only; 
 
 	//========================================================================
 	// If BIND logs error messages about the root key being expired,
@@ -30,14 +30,14 @@ options {
 	allow-transfer {"none";};
 	
 	// recursion range you allow
-	allow-recursion { localhost; 10.0.0.0/8; 192.168.0.0/16; };
+	allow-recursion { localhost; 10.0.0.0/8; 192.168.0.0/16; 172.16.0.0/20; };
 	
 	// block list
 	// http://dns.blog4ever.com/rpz-et-dns-exemple-de-configuration
 	response-policy { 
-		zone "rpz.custom.ls" policy CNAME block.ls;
+		//zone "rpz.custom.ls" policy CNAME block.ls;
 		zone "rpz.cache.ls";
-		zone "rpz.block.ls" policy CNAME block.ls;
+		//zone "rpz.block.ls" policy CNAME block.ls;
 	};
 
 };
