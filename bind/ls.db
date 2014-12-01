@@ -1,6 +1,6 @@
 $TTL	604800
 @	IN	SOA	ls. root.ls. (
-			      9		; Serial
+			     10		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -23,7 +23,7 @@ dns		IN	CNAME	proxy
 
 ;servers 
 ;proxy           IN      A       10.0.0.2
-proxy           IN      A       172.16.11.10
+proxy           IN      A       172.16.5.2
 cache		IN	A	10.0.0.3
 dc              IN      A       10.0.1.99
 mumble1		IN	A	10.0.0.51

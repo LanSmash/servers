@@ -7,79 +7,23 @@
 
 //include "/etc/bind/zones.rfc1918";
 
-//blocklist and vpn (netflix) contradict eachother, only use one at a time.
-//include "/etc/bind/named.conf.blocklist";
-//include "/etc/bind/named.conf.vpn";
-
-acl deathmatchcache {
-   10.0.99.197/32;
+zone "rpz.custom.ls" {
+      type master;
+      file "/etc/bind/rpz.custom.ls.db";
+      allow-query {localhost;};
+      allow-update {none;};
 };
 
-view "normal-view" {
-  match-clients { any; };
-  include "/etc/bind/named.conf.default-zones";
-  
-  response-policy {
-                zone "rpz.custom.ls" policy CNAME block.ls;
-                zone "rpz.deathmatch-cache.ls";
-		//zone "rpz.cache.ls";
-                zone "rpz.block.ls" policy CNAME block.ls;
-  };
-
-  zone "rpz.custom.ls" {
-       type master;
-       file "/etc/bind/rpz.custom.ls.db";
-       allow-query {localhost;};
-       allow-update {none;};
-  };
-
-  zone "rpz.deathmatch-cache.ls" {
-       type master;
-       file "/etc/bind/rpz.deathmatch-cache.ls.db";
-       allow-query {localhost;};
-       allow-update {none;};
-  };
-
-  zone "rpz.block.ls" {
-       type master;
-       file "/etc/bind/rpz.block.ls.db";
-       allow-query {localhost;};
-       allow-update {none;};
-  };
-
-  zone "ls" IN {
+zone "rpz.block.ls" {
       type master;
-      file "/etc/bind/ls.db";
-  };
-
+      file "/etc/bind/rpz.block.ls.db";
+      allow-query {localhost;};
+      allow-update {none;};
 };
 
-
-//
-// normal zone for LanSmash
-//
-view "chache-chain-view" {
-  //match-clients { any; };
-  match-clients { deathmatchcache; };
-
-
-  include "/etc/bind/named.conf.default-zones";
-
-  response-policy {
-                zone "rpz.cache.ls";
-  };
-
-  zone "rpz.cache.ls" {
-       type master;
-       file "/etc/bind/rpz.cache.ls.db";
-       allow-query {localhost;};
-       allow-update {none;};
-  };
-
-  zone "ls" IN {
+zone "ls" IN {
       type master;
       file "/etc/bind/ls.db";
-  };
 };
 
 logging {

@@ -10,14 +10,6 @@ options {
 	// Uncomment the following block, and insert the addresses replacing 
 	// the all-0's placeholder.
 
-	// forwarders {
-	// 	0.0.0.0;
-	// };
-
-	// for perth convention center
-	//forwarders {203.161.127.1; 203.153.224.42;};
-	//forward only;
-
 	# Forward all DNS queries to the Google Public DNS. 
 	forwarders { 8.8.8.8; 8.8.4.4; }; 
 	forward only; 
@@ -41,9 +33,9 @@ options {
 	// block list
 	// http://dns.blog4ever.com/rpz-et-dns-exemple-de-configuration
 	response-policy { 
-		//zone "rpz.custom.ls" policy CNAME block.ls;
-		zone "rpz.cache.ls";
-		//zone "rpz.block.ls" policy CNAME block.ls;
+		zone "rpz.custom.ls" policy CNAME block.ls;
+		//zone "rpz.cache.ls";
+		zone "rpz.block.ls" policy CNAME block.ls;
 	};
 
 };
