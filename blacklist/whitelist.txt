@@ -1,0 +1,6 @@
+#required for imessage pictures
+icloud.com
+
+#required for google accounts signin
+youtube.com
+

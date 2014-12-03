@@ -22,7 +22,8 @@ cat "./BL/anonvpn/domains" >> blocklist.txt
 #cat "./BL/chat/domains" >> blocklist.txt
 cat "./BL/costtraps/domains" >> blocklist.txt
 #cat "./BL/dating/domains" >> blocklist.txt
-#cat "./BL/downloads/domains" >> blocklist.txt
+#added downloads back in to block bittorrent... hopefully games can still update
+cat "./BL/downloads/domains" >> blocklist.txt
 cat "./BL/drugs/domains" >> blocklist.txt
 #cat "./BL/dynamic/domains" >> blocklist.txt
 cat "./BL/fortunetelling/domains" >> blocklist.txt
@@ -64,9 +65,6 @@ cat "./BL/warez/domains" >> blocklist.txt
 cat "./BL/webradio/domains" >> blocklist.txt
 cat "./BL/webtv/domains" >> blocklist.txt
 
-#convert the raw blocklist.txt list of domains to a zone format
-#$DIR/convert2bind.pl blocklist.txt > named.conf.blocklist
-
 #convert the raw blocklist.txt list of domains to a rpz format
 $DIR/convert2bindrpz.pl blocklist.txt > rpz.block.ls.db
 
@@ -76,6 +74,9 @@ echo updating /etc/bind
 sudo cp rpz.block.ls.db /etc/bind
 
 echo "rpz.block.ls.db updated in /etc/bind"
+
+echo applying whitelist.txt
+$DIR/unblock.sh $DIR/whitelist.txt
 
 echo reloading bind, this takes a few minutes
 sudo rndc reload
