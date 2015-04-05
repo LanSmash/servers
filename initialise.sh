@@ -4,6 +4,7 @@ git config --global user.email me@webberist.com
 
 #app armor breaks bind due to symlinks to home directory
 sudo /etc/init.d/apparmor stop && sudo update-rc.d -f apparmor remove
+sudo apt-get remove apparmor apparmor-utils -y
 
 #use github with ssh
 [ ! -f ~/.ssh/id_rsa ] && ssh-keygen -t rsa -C "server@webberist.com"
