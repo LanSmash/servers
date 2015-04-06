@@ -3,6 +3,7 @@ sudo sh -c 'echo deb http://ppa.launchpad.net/nginx/stable/ubuntu lucid main > /
 #todo - apt install nginx
 
 mkdir -p /data/www/logs
+mkdir -p /data/www/cache
 chown -R nginx:nginx /data/www
 echo 10.0.0.53	lancache-steam >> /etc/hosts
 echo 10.0.0.54  lancache-riot >> /etc/hosts
