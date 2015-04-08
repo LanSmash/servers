@@ -19,4 +19,5 @@ echo 10.0.0.59  lancache-origin >> /etc/hosts
 cd /etc/nginx && ln -s -f /home/weby/servers/nginx/* .
 useradd nginx
 
-cd /var/log && ln -s /data/www/logs/ nginx
+service nginx restart
+ln /data/www/logs/* /var/log/nginx/
