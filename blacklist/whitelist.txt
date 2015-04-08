@@ -4,3 +4,8 @@ icloud.com
 #required for google accounts signin
 youtube.com
 
+#i really want dropbox...
+dropbox.com
+
+ubuntu.com
+archive.ubuntu.com
