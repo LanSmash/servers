@@ -16,7 +16,8 @@ proxy_cache_valid 200 90d;
 proxy_cache_valid 301 302 0;
 
 # Enable cache revalidation
-proxy_cache_revalidate on;
+# This directive appeared in version 1.5.7.
+#proxy_cache_revalidate on;
 
 # By-pass with nocache=1
 proxy_cache_bypass $arg_nocache;
