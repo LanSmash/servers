@@ -1,4 +1,8 @@
-sudo sh -c 'echo deb http://ppa.launchpad.net/nginx/stable/ubuntu lucid main > /etc/apt/sources.list.d/nginx-stable-lucid.list'
+apt-get install software-properties-common python-software-properties -y
+apt-add-repository ppa:nginx/stable -y
+apt-get update
+apt-get install nginx -y
+
 #todo add lines to update and get keys for new ppa above
 #todo - apt install nginx
 
@@ -15,3 +19,4 @@ echo 10.0.0.59  lancache-origin >> /etc/hosts
 cd /etc/nginx && ln -s -f /home/weby/servers/nginx/* .
 useradd nginx
 
+cd /var/log && ln -s /data/www/logs/ nginx
