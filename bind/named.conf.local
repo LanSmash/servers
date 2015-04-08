@@ -7,6 +7,14 @@
 
 //include "/etc/bind/zones.rfc1918";
 
+zone "rpz.cache.ls" {
+      type master;
+      file "/etc/bind/rpz.cache.ls.db";
+      allow-query {localhost;};
+      allow-update {none;};
+};
+
+
 zone "rpz.custom.ls" {
       type master;
       file "/etc/bind/rpz.custom.ls.db";
