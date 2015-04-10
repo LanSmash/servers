@@ -1,6 +1,6 @@
 $TTL	604800
 @	IN	SOA	ls. root.ls. (
-			     11		; Serial
+			     12		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -31,8 +31,18 @@ nas		IN	A	10.0.0.17
 netboot		IN	A	10.0.0.15
 netmon		IN	A	10.0.0.33
 ggf		IN	A	10.0.0.60
-;jesus-cache	IN	A	10.0.0.61
 jesus-cache	IN	CNAME	lancache-steam
+
+dave-box	IN	A	10.0.1.1
+mumble		IN	CNAME	dave-box
+tf2          	IN      CNAME   dave-box
+csgo          	IN      CNAME   dave-box
+soldat          IN      CNAME   dave-box
+lfd2          	IN      CNAME   dave-box
+gmod          	IN      CNAME   dave-box
+ns          	IN      CNAME   dave-box
+
+	
 
 
 lancache-steam		IN	A	10.0.0.53

@@ -9,3 +9,4 @@ dropbox.com
 
 ubuntu.com
 archive.ubuntu.com
+dl.google.com

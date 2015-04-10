@@ -79,5 +79,6 @@ echo applying whitelist.txt
 $DIR/unblock.sh $DIR/whitelist.txt
 
 echo reloading bind, this takes a few minutes
-sudo rndc reload
+#sudo rndc reload
+sudo service bind9 reload
 
