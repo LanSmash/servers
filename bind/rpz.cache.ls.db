@@ -3,7 +3,7 @@
 ;
 $TTL 10
 @       IN SOA rpz.cache.ls. rpz.cache.ls. (
-       201404081;
+       201504111;
        3600;
        300;
        86400;
@@ -61,7 +61,7 @@ dist.blizzard.com		IN CNAME lancache-blizzard.ls.
 hirez.http.internapcdn.net	IN CNAME lancache-hirez.ls.
 
 ;origin
-akamai.cdn.ea.com		IN CNAME lancache-origin.ls.
+;akamai.cdn.ea.com		IN CNAME lancache-origin.ls.
 
 ; sony
 pls.patch.station.sony.com	IN CNAME lancache-sony.ls.
