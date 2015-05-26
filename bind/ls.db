@@ -45,7 +45,7 @@ ns          	IN      CNAME   dave-box
 ns2		IN	CNAME	dave-box
 
 	
-
+lancache-pass           IN      A       10.0.0.51
 lancache-xbox		IN	A	10.0.0.52
 lancache-steam		IN	A	10.0.0.53
 lancache-riot	        IN      A       10.0.0.54

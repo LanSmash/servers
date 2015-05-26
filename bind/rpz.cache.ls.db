@@ -11,8 +11,15 @@ $TTL 10
        IN      NS      localhost.
 
 ; ** Xbox **
+dlassets.xboxlive.com IN CNAME lancache-xbox.ls.
 download.xbox.com.edgesuite.net	IN CNAME lancache-xbox.ls.
 download.xbox.com	IN CNAME lancache-xbox.ls.
+xboxone.loris.llnwd.net IN CNAME lancache-xbox.ls.
+*.xboxone.loris.llnwd.net IN CNAME lancache-xbox.ls.
+*.*.xboxone.loris.llnwd.net IN CNAME lancache-xbox.ls.
+*.*.*.xboxone.loris.llnwd.net IN CNAME lancache-xbox.ls.
+*.*.*.*.xboxone.loris.llnwd.net IN CNAME lancache-xbox.ls.
+
 
 ; **L3CDN Riot Games**
 ; all of domain is manipulated to go to our cache
