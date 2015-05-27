@@ -14,6 +14,7 @@ proxy_cache_use_stale error timeout invalid_header updating http_500 http_502 ht
 # hence may not be valid for all users
 proxy_cache_valid 200 90d;
 #proxy_cache_valid 301 302 0;  #this line with a time of 0 still appeared to cache 302 redirects
+#update - proxy_cache_valid directive is overruled by headers. ignore cache header values to enforce this
 
 # Enable cache revalidation
 # This directive appeared in version 1.5.7.
