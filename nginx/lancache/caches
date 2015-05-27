@@ -1,3 +1,4 @@
-proxy_cache_path /data/www/cache/installs levels=2:2 keys_zone=installs:500m inactive=120d max_size=972800m loader_files=1000 loader_sleep=50ms loader_threshold=300ms;
+proxy_cache_path /data/www/cache/xbox levels=2:2 keys_zone=xbox:500m inactive=60d max_size=101000m loader_files=100 loader_sleep=50ms loader_threshold=300ms;
+proxy_cache_path /data/www/cache/installs levels=2:2 keys_zone=installs:500m inactive=120d max_size=151000m loader_files=1000 loader_sleep=50ms loader_threshold=300ms;
 proxy_cache_path /data/www/cache/other levels=2:2 keys_zone=other:100m inactive=72h max_size=10240m;
 proxy_temp_path /data/www/cache/tmp;
