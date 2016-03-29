@@ -81,4 +81,4 @@ $DIR/unblock.sh $DIR/whitelist.txt
 echo reloading bind, this takes a few minutes
 #sudo rndc reload
 sudo service bind9 reload
-
+echo if bind reload fails, you can always restart bind...
