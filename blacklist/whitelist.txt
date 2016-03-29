@@ -9,3 +9,8 @@ dropbox.com
 
 ubuntu.com
 archive.ubuntu.com
+dl.google.com
+romulation.net
+
+#steamcloud-syd.s3.amazonaws.com is for ns2
+s3.amazonaws.com

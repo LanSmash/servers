@@ -9,7 +9,11 @@ location /depot/ {
 
 	# Steam sometimes passes security parameters on the URI so we
 	# cache based on just the URI excluding the query string
-	proxy_cache_key "$server_name$uri";
+	#proxy_cache_key "$server_name$uri";
+	# all /depot directories on all steam servers *should* in
+	# theory have the same files within them.  just use the url as
+	# the key since many servers get used by clients
+	proxy_cache_key "$uri";
 	include lancache/cache-installs;
 }
 

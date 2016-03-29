@@ -2,6 +2,7 @@ apt-get install software-properties-common python-software-properties -y
 apt-add-repository ppa:nginx/stable -y
 apt-get update
 apt-get install nginx -y
+apt-get install bind9 -y
 
 #todo add lines to update and get keys for new ppa above
 #todo - apt install nginx

@@ -44,4 +44,11 @@ updates.installshield.com	IN CNAME *.;
 ;*.windowsupdate.com             IN CNAME *.;
 *.download.windowsupdate.com    IN CNAME *.;
 	
+; avast will use HTTPS to provide real DNS results instead of our RPZ
+avast.com			IN CNAME *.;
+*.avast.com                     IN CNAME *.;
+*.*.avast.com                   IN CNAME *.;
+*.*.*.avast.com                 IN CNAME *.;
+*.*.*.*.avast.com               IN CNAME *.;
+
 

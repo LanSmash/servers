@@ -1,0 +1,2 @@
+proxy_cache xbox;
+include lancache/proxy-cache;

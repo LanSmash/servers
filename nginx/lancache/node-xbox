@@ -1,0 +1,25 @@
+# Xbox Node
+include lancache/resolver;
+
+# Tested with Xbox One, should also work with Xbox360
+
+location / {
+        # Some downloads are very large so we cache based on range to keep
+        # single downloads quick and hence ensure interactivity is good.i
+        proxy_set_header Range $http_range;
+        proxy_set_header If-Range $http_if_range;
+        proxy_cache_key "$request_uri $http_range";
+	# http headers override the cache_valid statement below.
+	# dlassets.xboxlive.com serves up 302 redirects to send the client to various cdn sources
+        # eg: *.*.*.*.xboxone.loris.llnwd.net
+        # do not cache 302 redirects. It also sometimes replies with 206 instead of 302 redirect.
+        proxy_cache_valid 206 90d;
+	#on 302 redirect xbox live sets Cache-Control: max-age=604800
+	proxy_ignore_headers Expires Cache-Control;	
+
+	# xbox cdn likes to send us to servers that timeout, decrease the wait before we move on
+	proxy_connect_timeout 5s;
+
+	include lancache/cache-xbox;
+}
+
