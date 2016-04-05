@@ -51,4 +51,7 @@ avast.com			IN CNAME *.;
 *.*.*.avast.com                 IN CNAME *.;
 *.*.*.*.avast.com               IN CNAME *.;
 
+; block bitsync since we don't want people using bandwidth at lansmash
+getsync.com			IN CNAME *.;
+*.getsync.com                     IN CNAME *.;
 
