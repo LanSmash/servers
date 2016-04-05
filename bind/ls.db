@@ -50,6 +50,7 @@ mumble			IN	CNAME	skrub-web
 
 csgo-casual		IN	CNAME	gscs
 csgo-arms		IN	CNAME	gscs
+armagedtron		IN	CNAME	gscs
 
 tf2				IN	CNAME	gs1
 gmod			IN	CNAME	gs1
