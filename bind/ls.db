@@ -1,6 +1,6 @@
 $TTL	604800
 @	IN	SOA	ls. root.ls. (
-			     15		; Serial
+			     19		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -15,10 +15,10 @@ block		IN	CNAME	proxy
 ;@				IN	TXT	"service: wpad:http://wpad.ls:80/wpad.dat"
 ;wpad.tcp		IN	SRV	0 0 80 wpad.ls 
 steamcache		IN	CNAME	cache
-;cache			IN	CNAME	proxy
-web				IN	CNAME	ggf
-intranet		IN	CNAME	ggf
+intranet		IN	CNAME 	home
 
+;home.ls is used for captive portal in squid
+home			IN	CNAME	lansmash.github.io.
 
 ;servers 
 dns             IN  A   10.0.0.2
@@ -45,7 +45,7 @@ gsspare1		IN	A	10.0.0.78
 gsspare2		IN	A	10.0.0.79
 
 ;Dave / Skrubrekr - Service CNAME's
-home			IN	CNAME	skrub-web
+ddl			IN	CNAME	skrub-web
 mumble			IN	CNAME	skrub-web
 
 csgo-casual		IN	CNAME	gscs
