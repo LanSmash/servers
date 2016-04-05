@@ -11,43 +11,59 @@ block		IN	CNAME	proxy
 
 ; proxy wpad info
 ; don't use wpad, it's impossible to have some hosts bypass proxy.
-;wpad            IN      CNAME   proxy
-;@		IN	TXT	"service: wpad:http://wpad.ls:80/wpad.dat"
-;wpad.tcp	IN	SRV	0 0 80 wpad.ls 
-steamcache	IN	CNAME	cache
-;cache		IN	CNAME	proxy
-web		IN	CNAME	ggf
-intranet	IN	CNAME	ggf
+;wpad           IN      CNAME   proxy
+;@				IN	TXT	"service: wpad:http://wpad.ls:80/wpad.dat"
+;wpad.tcp		IN	SRV	0 0 80 wpad.ls 
+steamcache		IN	CNAME	cache
+;cache			IN	CNAME	proxy
+web				IN	CNAME	ggf
+intranet		IN	CNAME	ggf
 
 
 ;servers 
-dns             IN      A       10.0.0.2
-proxy           IN      A       172.16.5.2
-cache		IN	A	10.0.0.3
-dc              IN      A       10.0.0.125
-mumble1		IN	A	10.0.0.51
-mumble2		IN	A	10.0.0.52
-nas		IN	A	10.0.0.17
-netboot		IN	A	10.0.0.15
-netmon		IN	A	10.0.0.33
-ggf		IN	A	10.0.0.60
-csgo		IN	A	10.0.0.42
-tf2		IN	A	10.0.0.41
+dns             IN  A   10.0.0.2
+proxy           IN  A   172.16.5.2
+cache			IN	A	10.0.0.3
+dc              IN  A   10.0.0.125
+mumble1			IN	A	10.0.0.51
+mumble2			IN	A	10.0.0.52
+nas				IN	A	10.0.0.17
+netboot			IN	A	10.0.0.15
+netmon			IN	A	10.0.0.33
+ggf				IN	A	10.0.0.60
 
-dave-box	IN	A	10.0.1.1
-mumble		IN	CNAME	dave-box
-;tf2          	IN      CNAME   dave-box
-;csgo          	IN      CNAME   dave-box
-soldat          IN      CNAME   dave-box
-lfd2          	IN      CNAME   dave-box
-gmod          	IN      CNAME   dave-box
-ns          	IN      CNAME   dave-box
-ns2		IN	CNAME	dave-box
+
+;Dave / Skrubrekr - Servers
+skrub-ws		IN	A	10.0.0.71
+skrub-sv		IN	A	10.0.0.72
+skrub-web		IN	A	10.0.0.73
+gscs			IN	A	10.0.0.74
+gs1				IN	A	10.0.0.75
+gs2				IN	A	10.0.0.76
+gsut			IN	A	10.0.0.77
+gsspare1		IN	A	10.0.0.78
+gsspare2		IN	A	10.0.0.79
+
+;Dave / Skrubrekr - Service CNAME's
+home			IN	CNAME	skrub-web
+mumble			IN	CNAME	skrub-web
+
+csgo-casual		IN	CNAME	gscs
+csgo-arms		IN	CNAME	gscs
+
+tf2				IN	CNAME	gs1
+gmod			IN	CNAME	gs1
+
+l4d2			IN	CNAME	gs2
+ns2				IN	CNAME	gs2
+soldat			IN	CNAME	gs2
+
+ut				IN	CNAME	gsut
 
 	
 lancache-pass           IN      A       10.0.0.51
-lancache-xbox		IN	A	10.0.0.52
-lancache-steam		IN	A	10.0.0.53
+lancache-xbox			IN		A		10.0.0.52
+lancache-steam			IN		A		10.0.0.53
 lancache-riot	        IN      A       10.0.0.54
 lancache-blizzard       IN      A       10.0.0.55
 lancache-hirez	        IN      A       10.0.0.56
