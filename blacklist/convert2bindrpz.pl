@@ -8,10 +8,11 @@ $TTL 10
 print time;
 #201312231
 	print ';
-       3600;
-       300;
-       86400;
-       60 )
+       30; refresh secs
+       30; retry secs
+       60; expire secs
+       60; nxdomain ttl secs
+	)
        IN      NS      localhost.
 
 ';
