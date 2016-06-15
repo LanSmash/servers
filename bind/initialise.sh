@@ -10,6 +10,9 @@ cd /var/log
 sudo chgrp bind .
 sudo chmod g+w .
 
+# this is a hack, everyone shouldn't have access to key
+chmod 644 /etc/bind/rndc.key
+
 /etc/init.d/bind9 restart
 #cd ../blacklist
 echo Bind installed successfully.

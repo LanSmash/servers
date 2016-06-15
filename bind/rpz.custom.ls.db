@@ -3,7 +3,7 @@
 ;
 $TTL 10
 @       IN SOA rpz.custom.ls. rpz.custom.ls. (
-       201404044;
+       201404045;
        3600;
        300;
        86400;
@@ -54,4 +54,14 @@ avast.com			IN CNAME *.;
 ; block bitsync since we don't want people using bandwidth at lansmash
 getsync.com			IN CNAME *.;
 *.getsync.com                     IN CNAME *.;
+
+; 4chan
+4chan.org			IN CNAME *.;
+*.4chan.org			IN CNAME *.;
+4cdn.org			IN CNAME *.;
+*.4cdn.org                        IN CNAME *.;
+
+; block malware
+*.addthis.com			IN CNAME *.;
+addthis.com                   IN CNAME *.;
 

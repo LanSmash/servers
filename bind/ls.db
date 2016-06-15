@@ -1,13 +1,15 @@
-$TTL	604800
+$TTL	10
 @	IN	SOA	ls. root.ls. (
-			     19		; Serial
-			 604800		; Refresh
-			  86400		; Retry
-			2419200		; Expire
-			 604800 )	; Negative Cache TTL
+			21		; Serial
+ 			30	; refresh secs
+       			30	; retry secs
+       			60	; expire secs
+       			60	; nxdomain ttl secs
+			) 
 ;
 @		IN	NS	localhost.
-block		IN	CNAME	proxy
+;block		IN	CNAME	proxy
+block		IN	CNAME	lansmash.github.io.
 
 ; proxy wpad info
 ; don't use wpad, it's impossible to have some hosts bypass proxy.
@@ -24,7 +26,7 @@ home			IN	CNAME	lansmash.github.io.
 dns             IN  A   10.0.0.2
 proxy           IN  A   172.16.5.2
 cache			IN	A	10.0.0.3
-dc              IN  A   10.0.0.125
+dc              IN  A   10.0.0.72
 mumble1			IN	A	10.0.0.51
 mumble2			IN	A	10.0.0.52
 nas				IN	A	10.0.0.17
