@@ -7,7 +7,7 @@ sudo /etc/init.d/apparmor stop && sudo update-rc.d -f apparmor remove
 sudo apt-get remove apparmor apparmor-utils -y
 
 #use github with ssh
-[ ! -f ~/.ssh/id_rsa ] && ssh-keygen -t rsa -C "server@webberist.com"
+[ ! -f ~/.ssh/id_rsa ] && ssh-keygen -t rsa  -b 4096 -C "server@webberist.com"
 echo "#############################################"
 cat ~/.ssh/id_rsa.pub
 echo "#############################################"
